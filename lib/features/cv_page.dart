@@ -9,6 +9,13 @@ import 'widgets/cv_education.dart';
 import 'widgets/cv_contact.dart';
 import 'widgets/cv_footer.dart';
 
+/// Page principale du CV, assemblée en stack.
+///
+/// Contient un [SingleChildScrollView] avec toutes les sections :
+/// [CvHero], [CvExperience], [CvSkills], [CvEducation], [CvContact], [CvFooter].
+///
+/// Un [CvHeader] fixe est superposé via un [Positioned].
+/// La navigation interne utilise des [GlobalKey] et [Scrollable.ensureVisible].
 class CvPage extends ConsumerStatefulWidget {
   const CvPage({super.key});
 
@@ -25,6 +32,7 @@ class _CvPageState extends ConsumerState<CvPage> {
   final _educationKey = GlobalKey();
   final _contactKey = GlobalKey();
 
+  /// Scrolle de façon animée vers le widget associé à [key].
   void _scrollTo(GlobalKey key) {
     final ctx = key.currentContext;
     if (ctx == null) return;

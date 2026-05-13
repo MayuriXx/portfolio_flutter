@@ -3,6 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
 
+/// Header fixe de 60 px affiché au-dessus du contenu scrollable.
+///
+/// Affiche le nom du profil à gauche et les liens de navigation à droite.
+/// Devient semi-transparent avec une bordure lorsque la page est scrolled.
+///
+/// Reçoit un [scrollController] pour détecter le scroll et les callbacks
+/// `onXxxTap` pour la navigation par section.
 class CvHeader extends ConsumerStatefulWidget {
   final ScrollController scrollController;
   final VoidCallback onExperienceTap;
@@ -32,6 +39,7 @@ class _CvHeaderState extends ConsumerState<CvHeader> {
     widget.scrollController.addListener(_onScroll);
   }
 
+  /// Mise à jour de [_isScrolled] à chaque événement de scroll.
   void _onScroll() {
     setState(() => _isScrolled = widget.scrollController.offset > 20);
   }

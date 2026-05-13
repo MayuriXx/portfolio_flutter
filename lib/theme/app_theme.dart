@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Palette de couleurs du design system.
+///
+/// Cinq teintes de vert sauge (`c1` → `c5`) et leurs alias sémantiques
+/// (`bg`, `ink`, `accent`, `border`, etc.).
 class AppColors {
   AppColors._();
 
@@ -24,6 +28,9 @@ class AppColors {
   static const accentPale = c4;
 }
 
+/// Échelons d'espacement utilisés pour les paddings et les gaps.
+///
+/// Valeurs en pixels : `xs`=8, `sm`=16, `md`=24, `lg`=48, `xl`=80, `xxl`=120.
 class AppSpacing {
   AppSpacing._();
 
@@ -35,6 +42,7 @@ class AppSpacing {
   static const xxl = 120.0;
 }
 
+/// Rayons de bordure réutilisables.
 class AppRadius {
   AppRadius._();
 
@@ -44,6 +52,10 @@ class AppRadius {
   static const full = Radius.circular(100);
 }
 
+/// Styles typographiques du design system.
+///
+/// Titres en **Syne** (display*, titleLarge) ;
+/// corps de texte en **Instrument Sans** (body*, label, tag).
 class AppTextStyles {
   AppTextStyles._();
 
@@ -112,6 +124,10 @@ class AppTextStyles {
   );
 }
 
+/// Thème Material 3 de l'application.
+///
+/// Utilise [AppColors] comme `colorScheme` et Instrument Sans comme
+/// police de base via [GoogleFonts.instrumentSansTextTheme].
 class AppTheme {
   AppTheme._();
 

@@ -4,6 +4,10 @@ import '../../../providers/cv_provider.dart';
 import '../../../models/experience.dart';
 import '../../../theme/app_theme.dart';
 
+/// Section "Expérience" du CV (numéro 01).
+///
+/// Liste toutes les [Experience] issues de [experiencesProvider].
+/// Adapte la mise en page selon la largeur d'écran (breakpoint 768 px).
 class CvExperience extends ConsumerWidget {
   const CvExperience({super.key});
 

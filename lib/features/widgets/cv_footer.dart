@@ -4,9 +4,13 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
 
+/// Pied de page affichant le nom du profil et les liens vers GitHub / LinkedIn.
+///
+/// Fond très sombre (`#111111`), texte blanc atténué.
 class CvFooter extends ConsumerWidget {
   const CvFooter({super.key});
 
+  /// Ouvre [url] dans le navigateur externe.
   Future<void> _launch(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {

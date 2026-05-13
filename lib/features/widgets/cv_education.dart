@@ -4,6 +4,10 @@ import '../../../providers/cv_provider.dart';
 import '../../../models/education.dart';
 import '../../../theme/app_theme.dart';
 
+/// Section "Formation" du CV (numéro 03).
+///
+/// Affiche les [Education] issues de [educationsProvider] en grille
+/// de 2 colonnes (large) ou en pile verticale (mobile).
 class CvEducation extends ConsumerWidget {
   const CvEducation({super.key});
 

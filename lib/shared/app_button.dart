@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
 
+/// Variante visuelle du [AppButton].
 enum AppButtonStyle { dark, outline }
 
+/// Bouton réutilisable avec deux variantes et animation hover.
+///
+/// - [AppButtonStyle.dark] : fond sombre, texte blanc.
+/// - [AppButtonStyle.outline] : fond blanc, bordure verte, texte foncé.
+///
+/// Au survol, le bouton monte légèrement (-2 px) via une translation.
 class AppButton extends StatefulWidget {
   final String label;
   final VoidCallback onTap;

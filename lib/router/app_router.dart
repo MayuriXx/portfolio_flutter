@@ -3,6 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_flutter/features/cv_page.dart';
 
+/// Instance GoRouter exposée via Riverpod.
+///
+/// Routes :
+/// - `/` → [CvPage] (transition fade 400 ms)
+///
+/// Affiche [NotFoundPage] sur toute route inconnue.
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     initialLocation: '/',
@@ -40,6 +46,7 @@ final routerProvider = Provider<GoRouter>((ref) {
   );
 });
 
+/// Page affichée sur toute route inconnue (erreur 404).
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});
 

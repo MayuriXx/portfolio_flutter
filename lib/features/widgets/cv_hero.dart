@@ -6,6 +6,10 @@ import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
 import '../../../shared/app_button.dart';
 
+/// Section hero du CV : nom, titre, résumé, liens et boutons d'action.
+///
+/// Anime l'entrée avec un fondu + légère montée (700 ms, [Curves.easeOut]).
+/// Adapte sa mise en page selon la largeur d'écran (breakpoint 768 px).
 class CvHero extends ConsumerStatefulWidget {
   final VoidCallback onContactTap;
 
@@ -47,6 +51,7 @@ class _CvHeroState extends ConsumerState<CvHero>
     super.dispose();
   }
 
+  /// Ouvre [url] dans le navigateur externe.
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {

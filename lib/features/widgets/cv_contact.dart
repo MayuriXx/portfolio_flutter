@@ -6,9 +6,15 @@ import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
 import '../../../shared/app_button.dart';
 
+/// Section "Contact" du CV (numéro 04).
+///
+/// Affiche les coordonnées du profil et deux boutons d'action :
+/// envoi d'e-mail (`mailto:`) et ouverture du profil LinkedIn.
+/// Fond sombre ([AppColors.ink]).
 class CvContact extends ConsumerWidget {
   const CvContact({super.key});
 
+  /// Ouvre [url] dans le navigateur externe.
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
@@ -16,6 +22,7 @@ class CvContact extends ConsumerWidget {
     }
   }
 
+  /// Ouvre le client e-mail avec l'adresse [email] préremplie.
   Future<void> _launchEmail(String email) async {
     final uri = Uri(scheme: 'mailto', path: email);
     if (await canLaunchUrl(uri)) await launchUrl(uri);

@@ -4,6 +4,10 @@ import '../../../providers/cv_provider.dart';
 import '../../../models/skill_group.dart';
 import '../../../theme/app_theme.dart';
 
+/// Section "Compétences" du CV (numéro 02).
+///
+/// Affiche les [SkillGroup] issues de [skillGroupsProvider] en grille
+/// de 3 colonnes (large) ou en pile verticale (mobile).
 class CvSkills extends ConsumerWidget {
   const CvSkills({super.key});
 

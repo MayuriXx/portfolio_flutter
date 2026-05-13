@@ -5,18 +5,22 @@ import '../models/experience.dart';
 import '../models/education.dart';
 import '../models/skill_group.dart';
 
+/// Expose le profil depuis [CvContent.profile].
 final profileProvider = Provider<Profile>((ref) {
   return CvContent.profile;
 });
 
+/// Expose la liste des expériences depuis [CvContent.experiences].
 final experiencesProvider = Provider<List<Experience>>((ref) {
   return CvContent.experiences;
 });
 
+/// Expose les groupes de compétences depuis [CvContent.skillGroups].
 final skillGroupsProvider = Provider<List<SkillGroup>>((ref) {
   return CvContent.skillGroups;
 });
 
+/// Expose la liste des formations depuis [CvContent.educations].
 final educationsProvider = Provider<List<Education>>((ref) {
   return CvContent.educations;
 });
