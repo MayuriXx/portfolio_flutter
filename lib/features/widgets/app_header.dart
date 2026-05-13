@@ -34,7 +34,7 @@ class _AppHeaderState extends State<AppHeader> {
       duration: const Duration(milliseconds: 200),
       height: 60,
       decoration: BoxDecoration(
-        color: _isScrolled ? AppColors.bg.withOpacity(0.85) : AppColors.bg,
+        color: _isScrolled ? AppColors.bg.withValues(alpha: 0.85) : AppColors.bg,
         border: Border(
           bottom: BorderSide(
             color: _isScrolled ? AppColors.border : Colors.transparent,
