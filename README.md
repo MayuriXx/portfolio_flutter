@@ -95,7 +95,7 @@ flutter pub get
 flutter run -d chrome
 
 # Build de production
-flutter build web --base-href /portfolio-flutter/
+flutter build web --base-href /portfolio_flutter/
 ```
 
 ---
@@ -111,12 +111,12 @@ Le déploiement est automatisé via GitHub Actions (`.github/workflows/deploy.ym
 1. Checkout du repo
 2. Setup Flutter 3.27.0 (stable)
 3. `flutter pub get`
-4. `flutter build web --base-href /portfolio-flutter/`
+4. `flutter build web --base-href /portfolio_flutter/`
 5. Publication du dossier `build/web` sur la branche `gh-pages` via `peaceiris/actions-gh-pages`
 
 Le secret `GITHUB_TOKEN` est fourni automatiquement par GitHub Actions — aucune configuration manuelle requise.
 
-**URL de production** : `https://mayurixx.github.io/portfolio-flutter/`
+**URL de production** : `https://mayurixx.github.io/portfolio_flutter/`
 
 ---
 
