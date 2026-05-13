@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio_flutter/features/meta_page.dart';
+import 'package:portfolio_flutter/features/cv_page.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -10,10 +10,10 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(
         path: '/',
-        name: 'meta',
+        name: 'cv',
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
-          child: const MetaPage(),
+          child: const CvPage(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: CurvedAnimation(
@@ -27,8 +27,6 @@ final routerProvider = Provider<GoRouter>((ref) {
         ),
       ),
     ],
-
-    // Page 404
     errorPageBuilder: (context, state) => CustomTransitionPage(
       key: state.pageKey,
       child: const NotFoundPage(),

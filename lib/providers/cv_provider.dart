@@ -1,23 +1,22 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../data/cv_data.dart';
-import '../models/version.dart';
+import '../data/cv_content.dart';
+import '../models/profile.dart';
+import '../models/experience.dart';
+import '../models/education.dart';
+import '../models/skill_group.dart';
 
-// Liste complète des versions
-final versionsProvider = Provider<List<Version>>((ref) {
-  return CvData.versions;
+final profileProvider = Provider<Profile>((ref) {
+  return CvContent.profile;
 });
 
-// Versions live uniquement
-final liveVersionsProvider = Provider<List<Version>>((ref) {
-  return ref.watch(versionsProvider).where((v) => v.isLive).toList();
+final experiencesProvider = Provider<List<Experience>>((ref) {
+  return CvContent.experiences;
 });
 
-// Une version par id
-final versionByIdProvider = Provider.family<Version?, String>((ref, id) {
-  return ref.watch(versionsProvider).where((v) => v.id == id).firstOrNull;
+final skillGroupsProvider = Provider<List<SkillGroup>>((ref) {
+  return CvContent.skillGroups;
 });
 
-// Points de philosophie
-final philosophyProvider = Provider<List<PhilosophyPoint>>((ref) {
-  return CvData.philosophyPoints;
+final educationsProvider = Provider<List<Education>>((ref) {
+  return CvContent.educations;
 });
