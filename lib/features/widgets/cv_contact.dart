@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio_flutter/models/profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
@@ -62,7 +63,7 @@ class CvContact extends ConsumerWidget {
 
 // ── Partie gauche ──
 class _ContactLeft extends StatelessWidget {
-  final profile;
+  final Profile profile;
 
   const _ContactLeft({required this.profile});
 
@@ -116,7 +117,7 @@ class _ContactLeft extends StatelessWidget {
 
 // ── Partie droite : liens de contact ──
 class _ContactRight extends StatelessWidget {
-  final profile;
+  final Profile profile;
   final VoidCallback onEmail;
   final VoidCallback onLinkedIn;
 

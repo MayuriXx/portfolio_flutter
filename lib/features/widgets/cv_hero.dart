@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio_flutter/models/profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
@@ -150,7 +151,7 @@ class _Blob extends StatelessWidget {
 
 // ── Partie gauche : nom + titre + résumé ──
 class _HeroLeft extends StatelessWidget {
-  final profile;
+  final Profile profile;
 
   const _HeroLeft({required this.profile});
 
@@ -207,7 +208,7 @@ class _HeroLeft extends StatelessWidget {
 
 // ── Partie droite : stats + actions ──
 class _HeroRight extends StatelessWidget {
-  final profile;
+  final Profile profile;
   final VoidCallback onContactTap;
   final Future<void> Function(String url) onLaunchUrl;
 
