@@ -17,7 +17,6 @@ class CvContent {
         'des méthodologies agiles et des tests unitaires garantit des '
         'livrables robustes et évolutifs.',
     email: 'martho.evan@gmail.com',
-    phone: '06 18 32 63 18',
     linkedin: 'https://www.linkedin.com/in/evanmartho/',
     location: 'Lille, France',
   );

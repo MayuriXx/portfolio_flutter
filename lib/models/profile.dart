@@ -3,7 +3,6 @@ class Profile {
   final String title;
   final String summary;
   final String email;
-  final String phone;
   final String linkedin;
   final String location;
 
@@ -12,7 +11,6 @@ class Profile {
     required this.title,
     required this.summary,
     required this.email,
-    required this.phone,
     required this.linkedin,
     required this.location,
   });

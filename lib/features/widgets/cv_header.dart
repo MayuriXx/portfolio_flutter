@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../providers/cv_provider.dart';
 import '../../../theme/app_theme.dart';
 
@@ -41,12 +40,6 @@ class _CvHeaderState extends ConsumerState<CvHeader> {
   void dispose() {
     widget.scrollController.removeListener(_onScroll);
     super.dispose();
-  }
-
-  Future<void> _launchEmail() async {
-    final profile = ref.read(profileProvider);
-    final uri = Uri(scheme: 'mailto', path: profile.email);
-    if (await canLaunchUrl(uri)) await launchUrl(uri);
   }
 
   @override

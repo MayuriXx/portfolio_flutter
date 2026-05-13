@@ -20,11 +20,6 @@ class CvContact extends ConsumerWidget {
     if (await canLaunchUrl(uri)) await launchUrl(uri);
   }
 
-  Future<void> _launchPhone(String phone) async {
-    final uri = Uri(scheme: 'tel', path: phone.replaceAll(' ', ''));
-    if (await canLaunchUrl(uri)) await launchUrl(uri);
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profile = ref.watch(profileProvider);
@@ -44,7 +39,6 @@ class CvContact extends ConsumerWidget {
                   child: _ContactRight(
                     profile: profile,
                     onEmail: () => _launchEmail(profile.email),
-                    onPhone: () => _launchPhone(profile.phone),
                     onLinkedIn: () => _launchUrl(profile.linkedin),
                   ),
                 ),
@@ -58,7 +52,6 @@ class CvContact extends ConsumerWidget {
                 _ContactRight(
                   profile: profile,
                   onEmail: () => _launchEmail(profile.email),
-                  onPhone: () => _launchPhone(profile.phone),
                   onLinkedIn: () => _launchUrl(profile.linkedin),
                 ),
               ],
@@ -125,13 +118,11 @@ class _ContactLeft extends StatelessWidget {
 class _ContactRight extends StatelessWidget {
   final profile;
   final VoidCallback onEmail;
-  final VoidCallback onPhone;
   final VoidCallback onLinkedIn;
 
   const _ContactRight({
     required this.profile,
     required this.onEmail,
-    required this.onPhone,
     required this.onLinkedIn,
   });
 
@@ -144,12 +135,6 @@ class _ContactRight extends StatelessWidget {
           icon: Icons.email_outlined,
           label: profile.email,
           onTap: onEmail,
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        _ContactLink(
-          icon: Icons.phone_outlined,
-          label: profile.phone,
-          onTap: onPhone,
         ),
         const SizedBox(height: AppSpacing.sm),
         _ContactLink(
